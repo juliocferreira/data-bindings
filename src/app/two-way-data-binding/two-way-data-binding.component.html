@@ -1,0 +1,24 @@
+<section class="two-way-data-binding">
+  <article>
+    <h3>Two Way Data Binding</h3>
+    <div class="container">
+      <div class="form-group">
+        <!-- primeira maneira -->
+        <input type="text" class="form-control" [value]="text" (input)="text = $event.target.value" />
+        <!-- segunda maneira -->
+        <input type="text" class="form-control" [ngModel]="text" (ngModelChange)="text = $event" />
+        <!-- terceira maneira -->
+        <input type="text" class="form-control" [(ngModel)]="text" />
+        <br />
+        <p>Valor digitado: {{ text }}</p>
+      </div>
+      <!-- exemplo de como usar um objeto com two-way-data-binding -->
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="person.name"  />
+        <input type="text" class="form-control" [(ngModel)]="person.age"/>
+        <br />
+        <p>Opa, meu nome é {{ person.name }} e minha idade {{ person.age }}</p>
+      </div>
+    </div>
+  </article>
+</section>

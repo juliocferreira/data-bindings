@@ -1,0 +1,34 @@
+<section>
+  <article>
+    <h3>Class binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #item (change)="0">
+        <option value="alert-primary">Primary</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-danger">Danger</option>
+      </select>
+    </div>
+    <br />
+    <div class="alert" role="alert" [class.alert-primary]="item.value == 'alert-primary'">
+      Primary
+    </div>
+    <div class="alert" role="alert" [class.alert-danger]="item.value == 'alert-danger'">
+      Danger
+    </div>
+    <div class="alert" role="alert" [class.alert-warning]="item.value == 'alert-warning'">
+      Warning
+    </div>
+    <div class="alert" role="alert" [class.alert-info]="item.value == 'alert-info'">
+      Info
+    </div>
+
+    <div class="alert {{ item.value }}" role="alert">
+      Cor de acordo com a opçao escolhida
+    </div>
+
+    <div class="alert alert-danger" role="alert" [style.display]="item.value ==  'alert-danger' ? 'block' : 'none' ">
+      Só aparece com erro </div>
+  </article>
+</section>

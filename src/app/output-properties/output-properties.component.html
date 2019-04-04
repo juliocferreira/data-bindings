@@ -1,0 +1,10 @@
+<section class="two-way-data-binding">
+  <article>
+    <h3>Output properties</h3>
+    <div class="form-inline">
+      <button class="btn btn-primary" (click)="decrement()">-</button>
+      <input type="text" class="form-control" readonly  [value]="count">
+      <button class="btn btn-primary" (click)="increment()">+</button>
+    </div>
+  </article>
+</section>
